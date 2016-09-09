@@ -1,19 +1,17 @@
-plugins {
-    id 'net.researchgate.release' version '2.4.1'
-}
-
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
+
     defaultConfig {
-        applicationId "com.jorpaspr.gradlereleasetest"
         minSdkVersion 19
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
@@ -28,7 +26,6 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile project(':mylibrary')
     compile 'com.android.support:appcompat-v7:24.2.0'
     testCompile 'junit:junit:4.12'
 }
